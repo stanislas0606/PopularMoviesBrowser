@@ -9,7 +9,7 @@ import Foundation
 import Observation
 
 @Observable
-class MoviewListViewModel: ObservableObject {
+class MoviesListViewModel {
     var movies: [Movie] = []
     var isLoading = false
     
@@ -22,7 +22,6 @@ class MoviewListViewModel: ObservableObject {
     }
     
     func loadMovieList() async {
-        print("isLoading")
         isLoading = true
         do {
             //try await Task.sleep(until: .now + .seconds(1))

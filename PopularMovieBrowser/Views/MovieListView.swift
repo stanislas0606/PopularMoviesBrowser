@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MovieListView: View {
-    @State private var viewModel = MoviewListViewModel()
+    @State private var viewModel = MoviesListViewModel()
     
     var body: some View {
         NavigationSplitView {
