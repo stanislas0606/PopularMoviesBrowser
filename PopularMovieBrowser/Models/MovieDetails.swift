@@ -23,14 +23,4 @@ struct MovieDetails: Codable, Identifiable {
     var movieBackdropPath: String {
         "https://image.tmdb.org/t/p/w500/" + backdropPath
     }
-    
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case title
-        case releaseDate = "release_date"
-        case posterPath = "poster_path"
-        case voteAverage = "vote_average"
-        case backdropPath = "backdrop_path"
-        case overview
-    }
 }

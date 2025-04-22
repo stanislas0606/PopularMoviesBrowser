@@ -32,6 +32,7 @@ final class NetworkManager {
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
             let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             let responceResult = try decoder.decode(MovieListResponceModel.self, from: data)
             return responceResult.results
         } catch {
@@ -59,6 +60,7 @@ final class NetworkManager {
             let (data, _) = try await URLSession.shared.data(for: request)
             print(String(decoding: data, as: UTF8.self))
             let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             return try decoder.decode(MovieDetails.self, from: data)
         } catch {
             throw(error)

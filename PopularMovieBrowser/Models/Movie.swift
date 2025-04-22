@@ -17,12 +17,4 @@ struct Movie: Codable, Identifiable {
     var moviePosterPath: String {
         "https://image.tmdb.org/t/p/w500/" + posterPath
     }
-    
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case title
-        case releaseDate = "release_date"
-        case posterPath = "poster_path"
-        case voteAverage = "vote_average"
-    }
 }
