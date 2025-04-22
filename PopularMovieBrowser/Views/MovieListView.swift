@@ -13,10 +13,10 @@ struct MovieListView: View {
     var body: some View {
         NavigationSplitView {
             Group {
-                if viewModel.isLoading {
+                if viewModel.dataIsLoading {
                     ProgressView("Loading...")
                 } else {
-                    List(viewModel.movies) { movie in
+                    List(viewModel.allMovies) { movie in
                         NavigationLink(destination: MovieDetailView(movie: movie)) {
                             MovieRowView(movie: movie)
                         }
@@ -29,12 +29,12 @@ struct MovieListView: View {
             .navigationTitle("Popular movies")
             /*
             .onAppear {
-                if viewModel.movies.isEmpty {
+                if viewModel.moviesIsEmpty {
                     viewModel.loadMockData()
                 }
             }*/
             .task {
-                if viewModel.movies.isEmpty {
+                if viewModel.moviesIsEmpty {
                     await viewModel.loadMovieList()
                 }
             }

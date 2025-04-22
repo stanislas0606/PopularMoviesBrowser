@@ -9,9 +9,21 @@ import Foundation
 import Observation
 
 @Observable
-class MoviesListViewModel {
-    var movies: [Movie] = []
-    var isLoading = false
+final class MoviesListViewModel {
+    private var movies: [Movie] = []
+    private var isLoading = false
+    
+    var moviesIsEmpty: Bool {
+        movies.isEmpty
+    }
+    
+    var dataIsLoading: Bool {
+        isLoading
+    }
+    
+    var allMovies: [Movie] {
+        movies
+    }
     
     func loadMockData() {
         isLoading = true
@@ -30,6 +42,7 @@ class MoviesListViewModel {
             isLoading = false
         } catch {
             print(error.localizedDescription)
+            isLoading = false
         }
     }
 }
