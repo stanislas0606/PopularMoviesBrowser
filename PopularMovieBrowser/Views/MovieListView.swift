@@ -12,7 +12,6 @@ struct MovieListView: View {
     
     var body: some View {
         NavigationSplitView {
-            // ?
             Group {
                 if viewModel.isLoading {
                     ProgressView("Loading...")
