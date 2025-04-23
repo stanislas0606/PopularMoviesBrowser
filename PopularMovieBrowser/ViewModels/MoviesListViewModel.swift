@@ -39,10 +39,12 @@ final class MoviesListViewModel {
     }
     
     func loadMovieList() async {
+        let endpoint = Endpoint(path: "popular")
         isLoading = true
         do {
             //try await Task.sleep(until: .now + .seconds(1))
-            let fetchedMovies = try await networkManager.fetchMovieList()
+            let response: MovieListResponseModel = try await networkManager.request(endpoint)
+            let fetchedMovies = response.results
             movies = fetchedMovies
             isLoading = false
         } catch {

@@ -20,9 +20,11 @@ final class MovieDetailsViewModel {
     }
     
     func loadMovieDetails(for id: Int) async {
+        
+        let endpoint = Endpoint(path: "\(id)")
         do {
             //try await Task.sleep(until: .now + .seconds(1))
-            let fetchedMovie = try await networkManager.fetchMovieDetail(for: movie.id)
+            let fetchedMovie: MovieDetails = try await networkManager.request(endpoint)
             details.append(fetchedMovie)
         } catch {
             print(error.localizedDescription)
