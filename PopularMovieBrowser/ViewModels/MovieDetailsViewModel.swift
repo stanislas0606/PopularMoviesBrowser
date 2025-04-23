@@ -10,12 +10,13 @@ import Observation
 
 @Observable
 final class MovieDetailsViewModel {
-    let networkManager = NetworkManager.shared
+    private let networkManager: NetworkManager
     let movie: Movie
     var details: [MovieDetails] = []
     
-    init(movie: Movie) {
+    init(movie: Movie, networkManager: NetworkManager = NetworkManager.shared) {
         self.movie = movie
+        self.networkManager = networkManager
     }
     
     func loadMovieDetails(for id: Int) async {

@@ -10,6 +10,7 @@ import Observation
 
 @Observable
 final class MoviesListViewModel {
+    private let networkManager: NetworkManager
     private var movies: [Movie] = []
     private var isLoading = false
     
@@ -25,6 +26,10 @@ final class MoviesListViewModel {
         movies
     }
     
+    init(networkManager: NetworkManager = NetworkManager.shared) {
+        self.networkManager = networkManager
+    }
+    
     func loadMockData() {
         isLoading = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -37,7 +42,7 @@ final class MoviesListViewModel {
         isLoading = true
         do {
             //try await Task.sleep(until: .now + .seconds(1))
-            let fetchedMovies = try await NetworkManager.shared.fetchMovieList()
+            let fetchedMovies = try await networkManager.fetchMovieList()
             movies = fetchedMovies
             isLoading = false
         } catch {
