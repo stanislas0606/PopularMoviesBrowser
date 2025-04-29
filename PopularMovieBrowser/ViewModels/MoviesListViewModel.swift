@@ -10,11 +10,11 @@ import Observation
 
 @Observable
 final class MoviesListViewModel {
-    private let networkManager: NetworkManager
+    private let networkManager: NetworkServiceProtocol
     private(set) var movies: [Movie] = []
     private(set) var isLoading = false
     
-    init(networkManager: NetworkManager = NetworkManager.shared) {
+    init(networkManager: NetworkServiceProtocol = NetworkManager(config: .default, session: .shared)) {
         self.networkManager = networkManager
     }
     
@@ -32,9 +32,7 @@ final class MoviesListViewModel {
             isLoading = false
         }
         do {
-            //try await Task.sleep(until: .now + .seconds(1))
-            let endpoint = Endpoint(path: "popular")
-            let response: ListResponseModel<Movie> = try await networkManager.request(endpoint)
+            let response: MoviesListResponseModel<Movie> = try await networkManager.request(MovieAPI.popular())
             let fetchedMovies = response.results
             movies = fetchedMovies
         } catch {

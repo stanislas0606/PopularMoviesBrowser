@@ -10,21 +10,18 @@ import Observation
 
 @Observable
 final class MovieDetailsViewModel {
-    private let networkManager: NetworkManager
+    private let networkManager: NetworkServiceProtocol
     let movie: Movie
     private(set) var details: [MovieDetails] = []
     
-    init(movie: Movie, networkManager: NetworkManager = NetworkManager.shared) {
+    init(movie: Movie, networkManager: NetworkServiceProtocol = NetworkManager(config: .default, session: .shared)) {
         self.movie = movie
         self.networkManager = networkManager
     }
     
     func loadMovieDetails(for id: Int) async {
-        
-        let endpoint = Endpoint(path: "\(id)")
         do {
-            //try await Task.sleep(until: .now + .seconds(1))
-            let fetchedMovie: MovieDetails = try await networkManager.request(endpoint)
+            let fetchedMovie: MovieDetails = try await networkManager.request(MovieAPI.movieDetails(id))
             details.append(fetchedMovie)
         } catch {
             print(error.localizedDescription)
