@@ -1,0 +1,58 @@
+[
+  {
+    "id": 640146,
+    "title": "Ant-Man and the Wasp: Quantumania",
+    "release_date": "2023-02-15",
+    "poster_path": "https://image.tmdb.org/t/p/w500/ngl2FKBlU4fhbdsrtdom9LVLBXw.jpg",
+    "vote_average": 6.5
+  },
+  {
+    "id": 502356,
+    "title": "The Super Mario Bros. Movie",
+    "release_date": "2023-04-05",
+    "poster_path": "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
+    "vote_average": 7.5
+  },
+  {
+    "id": 594767,
+    "title": "Shazam! Fury of the Gods",
+    "release_date": "2023-03-15",
+    "poster_path": "https://image.tmdb.org/t/p/w500/2VK4d3mqqTc7LVZLnLPeRiPaJ71.jpg",
+    "vote_average": 6.9
+  },
+  {
+    "id": 76600,
+    "title": "Avatar: The Way of Water",
+    "release_date": "2022-12-14",
+    "poster_path": "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+    "vote_average": 7.7
+  },
+  {
+    "id": 948713,
+    "title": "The Last Kingdom: Seven Kings Must Die",
+    "release_date": "2023-04-14",
+    "poster_path": "https://image.tmdb.org/t/p/w500/7yyFEsuaLGTPul5UkHc5BhXnQ0k.jpg",
+    "vote_average": 7.4
+  },
+  {
+    "id": 677179,
+    "title": "Creed III",
+    "release_date": "2023-03-01",
+    "poster_path": "https://image.tmdb.org/t/p/w500/cvsXj3I9Q2iyyIo95AecSd1tad7.jpg",
+    "vote_average": 7.3
+  },
+  {
+    "id": 638974,
+    "title": "Murder Mystery 2",
+    "release_date": "2024-03-01",
+    "poster_path": "https://image.tmdb.org/t/p/w500/s1VzVhXlqsevi8zeCMG9A16nEUf.jpg",
+    "vote_average": 6.5
+  },
+  {
+    "id": 713704,
+    "title": "Evil Dead Rise",
+    "release_date": "2023-04-12",
+    "poster_path": "https://image.tmdb.org/t/p/w500/mIBCtPvKZQlxubxKMeViO2UrP3q.jpg",
+    "vote_average": 7
+  }
+]
