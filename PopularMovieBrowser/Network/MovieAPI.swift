@@ -17,6 +17,7 @@ enum MovieAPI {
     static func movieDetails(_ id: Int) -> Resource<MovieDetails> {
         Resource(
             request: URLRequest(path: "\(id)"),
-            decoder: Resource.decodeJSON)
+            decoder: Resource.decodeJSON
+        )
     }
 }
