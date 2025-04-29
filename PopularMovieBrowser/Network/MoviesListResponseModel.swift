@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct MovieListResponseModel: Codable {
+struct ListResponseModel<T: Decodable>: Decodable {
     let page: Int
-    let results: [Movie]
+    let results: [T]
     let totalPages: Int
     let totalResults: Int
 }

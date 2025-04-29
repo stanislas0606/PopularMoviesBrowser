@@ -1,6 +1,6 @@
 //
 //  Resource.swift
-//  TuneIn
+//  PopularMoviesBrowser
 //
 //  Created by Dima Vorona on 26.04.2025.
 //  Copyright © 2025 TuneIn Inc. All rights reserved.
@@ -49,6 +49,9 @@ final class Network {
     }
 
     func request<T>(_ resource: Resource<T>) async throws -> T {
-
+        var request = resource.request
+        request.setValue("Bearer \(config.token)", forHTTPHeaderField: "Authorization")
+        let (data, response) = try await session.data(for: request)
+        return try resource.decoder(data, response)
     }
 }

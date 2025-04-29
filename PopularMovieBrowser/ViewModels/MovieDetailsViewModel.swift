@@ -12,7 +12,7 @@ import Observation
 final class MovieDetailsViewModel {
     private let networkManager: NetworkManager
     let movie: Movie
-    var details: [MovieDetails] = []
+    private(set) var details: [MovieDetails] = []
     
     init(movie: Movie, networkManager: NetworkManager = NetworkManager.shared) {
         self.movie = movie

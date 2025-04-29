@@ -19,7 +19,7 @@ struct Endpoint {
         method: HTTPMethod = .get,
         queryItems: [URLQueryItem]? = nil,
         body: Encodable? = nil,
-    headers: [String : String]? = nil
+        headers: [String: String]? = nil
     ) {
         self.path = path
         self.method = method
