@@ -6,18 +6,21 @@
 //
 
 import Foundation
+import Network
 
 enum MovieAPI {
-    static func popular() -> Resource<MoviesListResponseModel<Movie>> {
+    static func popular() -> Resource<[Movie]> {
         Resource(
             request: URLRequest(path: "popular"),
-            decoder: Resource.decodeJSON
+            parse: Resource<MoviesListResponseModel<Movie>>.decodeJSON >>> {
+                $0.results
+            }
         )
     }
     static func movieDetails(_ id: Int) -> Resource<MovieDetails> {
         Resource(
             request: URLRequest(path: "\(id)"),
-            decoder: Resource.decodeJSON
+            parse: Resource.decodeJSON
         )
     }
 }

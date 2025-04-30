@@ -9,7 +9,7 @@
 import Foundation
 
 extension URLRequest {
-    init(baseURL: URL = URL(string: NetworkConfig.default.baseURL)!, path: String) {
+    public init(baseURL: URL = URL(string: NetworkConfig.default.baseURL)!, path: String) {
         self.init(url: baseURL.appending(path: path, directoryHint: .notDirectory))
         self.setValue("application/json", forHTTPHeaderField: "Content-Type")
     }

@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9B44EB182DC239A00055A1B6 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 9B44EB172DC239A00055A1B6 /* Network */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		9B9B6BB32DAC7DA000D96640 /* PopularMoviesBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularMoviesBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,16 +27,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B44EB182DC239A00055A1B6 /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B44EB162DC239A00055A1B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B9B6BAA2DAC7DA000D96640 = {
 			isa = PBXGroup;
 			children = (
 				9B9B6BB52DAC7DA000D96640 /* PopularMovieBrowser */,
+				9B44EB162DC239A00055A1B6 /* Frameworks */,
 				9B9B6BB42DAC7DA000D96640 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,12 +72,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				9B44EB1A2DC239A90055A1B6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				9B9B6BB52DAC7DA000D96640 /* PopularMovieBrowser */,
 			);
 			name = PopularMoviesBrowser;
 			packageProductDependencies = (
+				9B44EB172DC239A00055A1B6 /* Network */,
 			);
 			productName = PopularMovieBrowser;
 			productReference = 9B9B6BB32DAC7DA000D96640 /* PopularMoviesBrowser.app */;
@@ -123,6 +138,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B44EB1A2DC239A90055A1B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 9B44EB192DC239A90055A1B6 /* Network */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9B9B6BBF2DAC7DA100D96640 /* Debug */ = {
@@ -326,6 +348,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B44EB172DC239A00055A1B6 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+		9B44EB192DC239A90055A1B6 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B9B6BAB2DAC7DA000D96640 /* Project object */;
 }

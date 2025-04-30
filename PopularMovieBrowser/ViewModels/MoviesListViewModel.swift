@@ -7,6 +7,7 @@
 
 import Foundation
 import Observation
+import Network
 
 @Observable
 final class MoviesListViewModel {
@@ -32,8 +33,7 @@ final class MoviesListViewModel {
             isLoading = false
         }
         do {
-            let response: MoviesListResponseModel<Movie> = try await networkManager.request(MovieAPI.popular())
-            let fetchedMovies = response.results
+            let fetchedMovies = try await networkManager.request(MovieAPI.popular())
             movies = fetchedMovies
         } catch {
             print(error.localizedDescription)

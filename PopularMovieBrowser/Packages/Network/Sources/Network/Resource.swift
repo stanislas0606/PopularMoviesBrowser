@@ -8,13 +8,18 @@
 
 import Foundation
 
-struct Resource<T> {
+public struct Resource<T> {
     let request: URLRequest
-    let decoder: (Data, URLResponse) throws -> T
+    let parse: (Data, URLResponse) throws -> T
+    
+    public init(request: URLRequest, parse: @escaping (Data, URLResponse) throws -> T) {
+        self.request = request
+        self.parse = parse
+    }
 }
 
 extension Resource where T: Decodable {
-    static func decodeJSON(from data: Data, response: URLResponse) throws -> T {
+    public static func decodeJSON(from data: Data, response: URLResponse) throws -> T {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return try decoder.decode(T.self, from: data)
