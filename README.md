@@ -1,2 +1,2 @@
 # PopularMoviesBrowser
-Test application 
+Test application for SwiftUI.
